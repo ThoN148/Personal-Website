@@ -24,7 +24,8 @@ const Contact = () => {
 
             <p className={`mb-8 leading-relaxed ${
               darkMode ? "text-gray-400" : "text-gray-600"
-            }`}>
+            }`}
+            style={{ marginBottom: '20px' }}>
               I'm currently open to new opportunities. Whether you have a
               question, a project in mind, or just want to say hi — my
               inbox is always open!
@@ -67,12 +68,12 @@ const Contact = () => {
                 <div>
                   <p className="text-sm text-gray-500">LinkedIn</p>
                   <a
-                    href="https://linkedin.com/in/yourprofile"
+                    href="https://www.linkedin.com/in/tho-nguyen-60265a23a"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-blue-500 transition-colors font-medium"
                   >
-                    linkedin.com/in/yourprofile
+                    linkedin.com/in/ThoNguyen
                   </a>
                 </div>
               </div>
