@@ -1,5 +1,5 @@
 import { useTheme } from "../themecontext";
-import { ExternalLink, Code2 } from "lucide-react";
+import { ExternalLink, Code2 } from "lucide-react"; // Come back to this with Github instead of Code2
 
 const Projects = () => {
   const { darkMode } = useTheme();
