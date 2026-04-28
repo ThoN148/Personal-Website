@@ -59,6 +59,16 @@ const Navbar = () => {
 
           {/* Right Side */}
           <div className="flex items-center gap-4 flex-shrink-0">
+            
+            {/* Personal Page Button */}
+            <a
+              href="/personal"
+              className="hidden md:block px-4 py-2 rounded-full text-sm font-medium border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-colors"
+            >
+              Personal
+            </a>
+
+            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
               className={`p-2 rounded-full transition-colors ${
@@ -102,6 +112,15 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+
+          {/* Personal link in mobile menu too */}
+          <a
+            href="/personal"
+            onClick={() => setMenuOpen(false)}
+            className="block py-3 text-sm font-medium border-b text-blue-500 border-gray-700 hover:text-blue-400 transition-colors"
+          >
+            Personal
+          </a>
         </div>
       )}
     </nav>
