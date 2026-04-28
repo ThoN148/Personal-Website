@@ -21,6 +21,45 @@ const projects = [
     live: "https://mediocre-mr-fish.itch.io/beholden",
     image: "/project2.png",
   },
+  {
+  title: "Personal Portfolio Website",
+  description: "A responsive personal portfolio website built from scratch to showcase my projects, skills, and experience. Features a space-themed animated background, dark/light mode toggle, and a separate personal page.",
+  tags: ["React", "TailwindCSS", "Vite", "Vercel"],
+  github: "https://github.com/ThoN148/Personal-Website.git",
+  live: "https://tho-nguyen-topaz.vercel.app/",
+  image: "/project4.png",
+  },
+  {
+    title: "Intelligent Pathfinding & Game AI",
+    description: "A collection of AI and pathfinding algorithms including a reinforcement learning Pac-Man agent, an optimized A* pathfinding engine with configurable heuristics, and a minimax Connect Four AI with alpha-beta pruning.",
+    tags: ["Python", "Reinforcement Learning", "A*", "Minimax", "Alpha-Beta Pruning", "Jupyter"],
+    github: "https://github.com/ThoN148/AI-Training.git",
+    image: "/project3.png",
+    },
+  {
+    title: "Computer Network Protocols",
+    description: "A low-level networking project implementing custom UDP/TCP stacks with congestion control and error detection, a multi-algorithm routing simulation engine, and Wireshark-based diagnostic tooling for protocol validation. Source code available upon request.",
+    tags: ["C", "UDP", "TCP", "Wireshark", "Networking"],
+    github: "",
+    live: "",
+    image: "/project5.png",
+  },
+  {
+    title: "FPGA Blackjack Game",
+    description: "A fully functional blackjack game implemented on an FPGA board using Verilog, utilizing onboard pins and switches for user input and hardware-level display output. Source code available upon request.",
+    tags: ["Verilog", "FPGA", "Hardware", "Digital Logic"],
+    github: "",
+    live: "",
+    image: "/project6.png",
+  },
+  {
+    title: "Sound-Detecting Robot",
+    description: "An embedded robotics system built on the MSP432 microcontroller using microphones and op-amp signal amplification to capture audio, applying ADC sampling and DSP algorithms to locate the sound source and drive the robot toward it in real time. Source code available upon request.",
+    tags: ["C", "MSP432", "Embedded Systems", "DSP", "Robotics"],
+    github: "",
+    live: "",
+    image: "/project7.png",
+  },
 ];
 
   return (
