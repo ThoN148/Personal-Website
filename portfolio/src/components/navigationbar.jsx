@@ -31,7 +31,7 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="w-full px-8">
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
@@ -43,7 +43,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -57,8 +57,8 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Right Side: Theme Toggle + Hamburger */}
-          <div className="flex items-center gap-4">
+          {/* Right Side */}
+          <div className="flex items-center gap-4 flex-shrink-0">
             <button
               onClick={toggleTheme}
               className={`p-2 rounded-full transition-colors ${
