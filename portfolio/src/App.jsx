@@ -3,6 +3,7 @@ import StarBackground from "./components/background"
 import Navbar from "./components/navigationbar"
 import Hero from "./components/hero"
 import About from "./components/about"
+import Skills from "./components/skills"
 
 function App() {
   const { darkMode } = useTheme()
@@ -14,6 +15,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Skills />
       </main>
     </div>
   )
