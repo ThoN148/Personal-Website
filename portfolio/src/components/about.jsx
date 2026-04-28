@@ -27,23 +27,33 @@ const About = () => {
           {/* Text Content */}
           <div>
             <h3 className="text-2xl font-semibold mb-4">
-              Hi, I'm <span className="text-blue-500">Your Name</span>
+              Hi, I'm <span className="text-blue-500">Tho Nguyen</span>
             </h3>
-            <p className={`mb-4 leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
-              Write a short paragraph about yourself here! Where are you from,
-              what do you do, what are you passionate about?
+            <p className={`mb-4 leading-relaxed
+                          ${darkMode ? "text-gray-300" : "text-gray-600"}`}
+                          style={{ marginBottom: '20px' }}>
+
+              I’m originally from Vietnam and currently a Computer Engineering student at UC Davis.
+              I’m passionate about building and designing technology that blends creativity with functionality, with a strong interest in 3D modeling and game development.
+              I enjoy exploring how software and design can come together to create engaging and interactive experiences.
+
             </p>
-            <p className={`mb-6 leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
-              Add a second paragraph here. Maybe talk about your background,
-              education, or what you're currently working on.
+
+            <p className={`mb-6 leading-relaxed
+                          ${darkMode ? "text-gray-300" : "text-gray-600"}`}
+                          style={{ marginBottom: '20px' }}>
+
+              Currently, I’m working on projects such as a security system while continuing to expand my portfolio.
+              Through my coursework and personal projects, I’m constantly developing my skills and looking for new opportunities to grow as a developer and engineer.
+
             </p>
 
             {/* Quick Info */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { label: "Name", value: "Your Name" },
-                { label: "Location", value: "Your City, State" },
-                { label: "Email", value: "your@email.com" },
+                { label: "Name", value: "Tho Nguyen" },
+                { label: "Location", value: "San Jose, California" },
+                { label: "Email", value: "ThoN54084@gmail.com" },
                 { label: "Available", value: "Open to opportunities" },
               ].map(({ label, value }) => (
                 <div key={label} className="flex gap-2">
@@ -57,11 +67,11 @@ const About = () => {
 
             {/* Resume Button */}
             <a
-              href="/resume.pdf"
-              target="_blank"
-              className="inline-block mt-8 px-6 py-3 bg-blue-500 text-white rounded-full font-medium hover:bg-blue-600 transition-colors"
+              // href="/resume.pdf"
+              //target="_blank"
+              //className="inline-block mt-8 px-6 py-3 bg-blue-500 text-white rounded-full font-medium hover:bg-blue-600 transition-colors"
             >
-              Download Resume
+              
             </a>
           </div>
 

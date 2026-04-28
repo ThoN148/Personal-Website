@@ -43,7 +43,7 @@ const Contact = () => {
                     href="mailto:your@email.com"
                     className="hover:text-blue-500 transition-colors font-medium"
                   >
-                    your@email.com
+                    ThoN54084@gmail.com
                   </a>
                 </div>
               </div>

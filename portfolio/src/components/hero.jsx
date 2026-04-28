@@ -36,9 +36,8 @@ const Hero = () => {
           }`}
           style={{ marginBottom: '60px' }}
         >
-          I'm currently an engineer studying at University of California Davis!
-          I tend to have hobbies leading to projects, which I'll keep here for the public to view, enjoy whats around.
-          If you have any question, don't be shy to contact me anytime!
+          This is my personal portfolio!
+          Look around and see information about myself!
         </p>
 
         {/* Buttons */}
