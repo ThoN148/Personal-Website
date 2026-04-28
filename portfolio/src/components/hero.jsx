@@ -24,18 +24,21 @@ const Hero = () => {
           className={`text-2xl md:text-3xl font-light mb-6 ${
             darkMode ? "text-gray-400" : "text-gray-600"
           }`}
+          style={{ marginBottom: '20px' }}
         >
           Full Stack Developer
         </h2>
 
         {/* Description */}
         <p
-          className={`max-w-xl mx-auto text-base md:text-lg mb-10 ${
+          className={`max-w-xl mx-auto text-base md:text-lg ${
             darkMode ? "text-gray-400" : "text-gray-600"
           }`}
+          style={{ marginBottom: '60px' }}
         >
-          I build beautiful, responsive web applications with modern
-          technologies. Passionate about creating great user experiences.
+          I'm currently an engineer studying at University of California Davis!
+          I tend to have hobbies leading to projects, which I'll keep here for the public to view, enjoy whats around.
+          If you have any question, don't be shy to contact me anytime!
         </p>
 
         {/* Buttons */}
