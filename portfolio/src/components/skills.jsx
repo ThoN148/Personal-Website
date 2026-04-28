@@ -3,12 +3,32 @@ import { useTheme } from "../themecontext";
 const Skills = () => {
   const { darkMode } = useTheme();
 
-  const skills = [
-    { category: "Frontend", items: ["React", "JavaScript", "HTML", "CSS", "TailwindCSS"] },
-    { category: "Backend", items: ["Node.js", "Express", "Python", "REST APIs"] },
-    { category: "Database", items: ["MongoDB", "PostgreSQL", "MySQL", "Firebase"] },
-    { category: "Tools", items: ["Git", "GitHub", "VS Code", "Figma", "Docker"] },
-  ];
+const skills = [
+  {
+    category: "Programming Languages",
+    items: ["C", "C++", "C#", "Python", "JavaScript", "Kotlin", "MATLAB"]
+  },
+  {
+    category: "Frameworks & Software",
+    items: ["React", "Node.js", "Tailwind CSS", "Android Studio", "AWS Amplify"]
+  },
+  {
+    category: "Hardware & Embedded",
+    items: ["Arduino", "Microcontrollers", "FPGA", "Soldering"]
+  },
+  {
+    category: "Networking & Systems",
+    items: ["WebSockets", "Socket.IO", "Wireshark", "Event-Driven Systems", "Real-Time Data Processing"]
+  },
+  {
+    category: "Concepts",
+    items: ["Object Oriented Programming", "Data Structures & Algorithms", "Networking", "Reinforcement Learning", "AI & Pathfinding"]
+  },
+  {
+    category: "Tools",
+    items: ["Git", "Docker", "GitHub Actions", "VS Code", "Figma", "Jira", "AWS", "Overleaf", "Onshape"]
+  },
+];
 
   return (
     <section id="skills" className="py-24 px-4">

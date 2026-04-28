@@ -12,11 +12,11 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
 
         {/* Name */}
-        <p className="text-blue-500 font-semibold text-lg">YourName</p>
+        <p className="text-blue-500 font-semibold text-lg">Tho Nguyen</p>
 
         {/* Copyright */}
         <p className="text-sm">
-          © {new Date().getFullYear()} YourName. All rights reserved.
+          © {new Date().getFullYear()} Tho Nguyen. All rights reserved.
         </p>
 
         {/* Links */}
