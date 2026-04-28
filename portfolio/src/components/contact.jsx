@@ -55,7 +55,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Location</p>
-                  <p className="font-medium">Your City, State</p>
+                  <p className="font-medium">San Jose, California</p>
                 </div>
               </div>
 

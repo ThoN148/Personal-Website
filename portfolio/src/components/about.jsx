@@ -67,11 +67,11 @@ const About = () => {
 
             {/* Resume Button */}
             <a
-              // href="/resume.pdf"
-              //target="_blank"
-              //className="inline-block mt-8 px-6 py-3 bg-blue-500 text-white rounded-full font-medium hover:bg-blue-600 transition-colors"
+              href="/Resume.pdf"
+              target="_blank"
+              className="inline-block mt-8 px-6 py-3 bg-blue-500 text-white rounded-full font-medium hover:bg-blue-600 transition-colors"
             >
-              
+              Download Resume
             </a>
           </div>
 
