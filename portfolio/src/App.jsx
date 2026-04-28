@@ -4,6 +4,7 @@ import Navbar from "./components/navigationbar"
 import Hero from "./components/hero"
 import About from "./components/about"
 import Skills from "./components/skills"
+import Projects from "./components/projects"
 
 function App() {
   const { darkMode } = useTheme()
@@ -16,6 +17,7 @@ function App() {
         <Hero />
         <About />
         <Skills />
+        <Projects />
       </main>
     </div>
   )
