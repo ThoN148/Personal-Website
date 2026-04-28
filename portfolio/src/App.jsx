@@ -1,7 +1,7 @@
 function App() {
   return (
-    <div className="bg-blue-500 text-white text-4xl p-8">
-      Tailwind is working!
+    <div>
+      <h1>My Portfolio</h1>
     </div>
   )
 }
