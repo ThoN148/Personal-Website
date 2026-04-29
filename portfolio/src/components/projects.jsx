@@ -6,9 +6,11 @@ const Projects = () => {
   const { darkMode } = useTheme();
   const scrollRef = useRef(null);
   const animationRef = useRef(null);
+  const lastInteractionRef = useRef(null);
+  const positionRef = useRef(0);
   const [isPaused, setIsPaused] = useState(false);
 
- const projects = [
+  const projects = [
     {
       title: "Smart Home Security Monitoring System",
       description: "A full stack home safety system integrating 4 sensor types and camera live feeds, leveraging AWS Rekognition for real-time hazard detection within 5 seconds. Features an Android app with live camera feed, push alerts, and remote monitoring dashboard.",
@@ -67,32 +69,83 @@ const Projects = () => {
     },
   ];
 
-  // 🔥 duplicate for seamless loop
+  // Duplicate for seamless loop
   const extendedProjects = [...projects, ...projects];
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
 
-    const speed = 0.5;
+    const RESUME_DELAY = 3000;
+    const SCROLL_SPEED = 1;
+    let isTouching = false;
 
-    const animate = () => {
-      if (!isPaused) {
-        el.scrollLeft += speed;
+    const tick = () => {
+      const timeSinceInteraction = Date.now() - (lastInteractionRef.current || 0);
 
-        // seamless reset
-        if (el.scrollLeft >= el.scrollWidth / 2) {
-          el.scrollLeft = 0;
+      if (timeSinceInteraction > RESUME_DELAY && !isTouching) {
+        setIsPaused(false);
+        positionRef.current += SCROLL_SPEED;
+
+        // Seamless loop — reset at halfway point since we duplicated projects
+        if (positionRef.current >= el.scrollWidth / 2) {
+          positionRef.current = 0;
         }
+
+        el.scrollLeft = positionRef.current;
       }
 
-      animationRef.current = requestAnimationFrame(animate);
+      animationRef.current = requestAnimationFrame(tick);
     };
 
-    animationRef.current = requestAnimationFrame(animate);
+    const handleMouseEnter = () => {
+      positionRef.current = el.scrollLeft;
+      lastInteractionRef.current = Date.now();
+      setIsPaused(true);
+    };
 
-    return () => cancelAnimationFrame(animationRef.current);
-  }, [isPaused]);
+    const handleMouseLeave = () => {
+      lastInteractionRef.current = Date.now();
+    };
+
+    const handleTouchStart = () => {
+      isTouching = true;
+      positionRef.current = el.scrollLeft;
+      lastInteractionRef.current = Date.now();
+      setIsPaused(true);
+    };
+
+    const handleTouchEnd = () => {
+      isTouching = false;
+      setTimeout(() => {
+        positionRef.current = el.scrollLeft;
+        lastInteractionRef.current = Date.now();
+      }, 500);
+    };
+
+    const handleWheel = () => {
+      positionRef.current = el.scrollLeft;
+      lastInteractionRef.current = Date.now();
+      setIsPaused(true);
+    };
+
+    el.addEventListener("mouseenter", handleMouseEnter);
+    el.addEventListener("mouseleave", handleMouseLeave);
+    el.addEventListener("touchstart", handleTouchStart, { passive: true });
+    el.addEventListener("touchend", handleTouchEnd, { passive: true });
+    el.addEventListener("wheel", handleWheel, { passive: true });
+
+    animationRef.current = requestAnimationFrame(tick);
+
+    return () => {
+      cancelAnimationFrame(animationRef.current);
+      el.removeEventListener("mouseenter", handleMouseEnter);
+      el.removeEventListener("mouseleave", handleMouseLeave);
+      el.removeEventListener("touchstart", handleTouchStart);
+      el.removeEventListener("touchend", handleTouchEnd);
+      el.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
 
   return (
     <section id="projects" className="py-24 px-4">
@@ -101,10 +154,9 @@ const Projects = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           My <span className="text-blue-500">Projects</span>
         </h2>
-
         <div className="w-16 h-1 bg-blue-500 mx-auto mb-16 rounded-full" />
 
-        {/* Status */}
+        {/* Status hint */}
         <div className="flex justify-end mb-4">
           <span className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-500"}`}>
             {isPaused ? "Scroll freely →" : "Auto scrolling..."}
@@ -114,12 +166,13 @@ const Projects = () => {
         {/* Scroll container */}
         <div
           ref={scrollRef}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          onTouchStart={() => setIsPaused(true)}
-          onTouchEnd={() => setIsPaused(false)}
           className="flex gap-8 overflow-x-auto pb-6 pt-6"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            WebkitOverflowScrolling: "touch",
+            touchAction: "pan-x",
+          }}
         >
           {extendedProjects.map((project, index) => (
             <div
@@ -139,11 +192,8 @@ const Projects = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">
-                  {project.title}
-                </h3>
-
-                <p className={`text-sm mb-4 ${
+                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <p className={`text-sm mb-4 leading-relaxed ${
                   darkMode ? "text-gray-400" : "text-gray-600"
                 }`}>
                   {project.description}
@@ -166,26 +216,28 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm hover:text-blue-500"
+                      className={`flex items-center gap-2 text-sm font-medium transition-colors hover:text-blue-500 ${
+                        darkMode ? "text-gray-400" : "text-gray-600"
+                      }`}
                     >
                       <Code2 size={16} />
                       Code
                     </a>
                   )}
-
                   {project.live && (
                     <a
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm hover:text-blue-500"
+                      className={`flex items-center gap-2 text-sm font-medium transition-colors hover:text-blue-500 ${
+                        darkMode ? "text-gray-400" : "text-gray-600"
+                      }`}
                     >
                       <ExternalLink size={16} />
                       Live Demo
                     </a>
                   )}
                 </div>
-
               </div>
             </div>
           ))}
