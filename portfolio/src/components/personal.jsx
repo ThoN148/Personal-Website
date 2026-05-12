@@ -1,17 +1,6 @@
 import { useState } from "react";
 import { useTheme } from "../themecontext";
-import {
-  Music,
-  Gamepad2,
-  Palette,
-  UtensilsCrossed,
-  Sun,
-  Moon,
-  Film,
-  TvMinimalPlay,
-  ExternalLink,
-  ChevronRight,
-} from "lucide-react";
+import { Music, Gamepad2, Palette, UtensilsCrossed, Sun, Moon, Film, TvMinimalPlay, ExternalLink, ChevronRight } from "lucide-react";
 import StarBackground from "./background";
 
 const Personal = () => {

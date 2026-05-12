@@ -9,9 +9,6 @@ import Projects from './components/projects'
 import Contact from './components/contact'
 import Footer from './components/footer'
 import Personal from './components/personal'
-import PersonalV1 from './pages/personalV1'
-import PersonalV2 from './pages/personalv2'
-import PersonalV3 from './pages/personalV3'
 import Cooking from './pages/cooking'
 
 function Home() {
@@ -37,9 +34,6 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/personal" element={<Personal />} />
-      <Route path="/personal-v1" element={<PersonalV1 />} />
-      <Route path="/personal-v2" element={<PersonalV2 />} />
-      <Route path="/personal-v3" element={<PersonalV3 />} />
       <Route path="/cooking" element={<Cooking />} />
     </Routes>
   )
