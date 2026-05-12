@@ -172,6 +172,21 @@ const Personal = () => {
                 ))}
             </div>
 
+            {/* Cooking Hobby */}
+            <h3 className="text-2xl font-bold text-center mb-8">
+                Cooking <span className="text-blue-500">Meals</span>
+            </h3>
+
+            {/* Cookbook Button */}
+            <div className="flex justify-center mb-16">
+                <a
+                href="/cooking"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-amber-500 text-white rounded-full font-medium hover:bg-amber-600 transition-colors text-lg hover:-translate-y-1 duration-300"
+                >
+                Check out some meals I've made!
+                </a>
+            </div>
+
             {/* Photo Gallery */}
             <h3 className="text-2xl font-bold text-center mb-8">
                 Photo <span className="text-blue-500">Gallery</span>

@@ -172,7 +172,7 @@ const Projects = () => {
             msOverflowStyle: "none",
             WebkitOverflowScrolling: "touch",
             touchAction: "pan-x",
-          }}
+          }} 
         >
           {extendedProjects.map((project, index) => (
             <div
@@ -195,8 +195,9 @@ const Projects = () => {
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className={`text-sm mb-4 leading-relaxed ${
                   darkMode ? "text-gray-400" : "text-gray-600"
-                }`}>
+                }`} style={{ marginBottom: '20px' }}>
                   {project.description}
+                  
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
